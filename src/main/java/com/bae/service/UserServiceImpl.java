@@ -14,7 +14,9 @@ public class UserServiceImpl implements UserService {
 
 		Random random = new Random();
 		Integer num = random.nextInt(899999) + 100000;
-		String numString = num.toString();
+		String chars = "abc";
+		char letter = chars.charAt(random.nextInt(3));
+		String numString = letter + num.toString();
 		ResponseEntity<String> retVal = new ResponseEntity<String>(numString, HttpStatus.OK);
 		return retVal;
 	}
